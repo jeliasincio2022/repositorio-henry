@@ -1,0 +1,222 @@
+/*!
+* jquery.fixheadertable
+*
+* Copyright (c) 2010 Benjamin Léouzon
+* http://www.tablefixedheader.com/
+*
+* Licensed under MIT
+* http://www.opensource.org/licenses/mit-license.php
+*
+* Launch  : December 2010
+* Version : 2.0
+*/
+
+/* CALCULATE SCROLLBAR WIDTH */
+
+p.t_fixed_header_scroll_inner {
+	width			: 100%;
+	height			: 200px;
+}
+
+div.t_fixed_header_scroll_outer {
+	top 			: 0;
+	left 			: 0;
+	visibility 		: hidden;
+	width 			: 200px;
+	height 			: 150px;
+	overflow 		: hidden;
+}
+
+/* BASE */
+
+div.t_fixed_header {
+	position		: relative;
+	margin 			: 0; 
+	width			: 100%;
+}
+
+div.t_fixed_header * {
+	margin			: 0;
+	padding			: 0;
+}
+
+div.t_fixed_header table.head {
+	position		: relative;	
+}
+
+div.t_fixed_header table {
+	width			: 100%;
+	table-layout 	: fixed;
+	empty-cells 	: show;
+	border-collapse	: collapse;
+	border-spacing	: 0;
+}
+
+div.t_fixed_header table.headtable td.fillScrollbar {
+	font-size		: 0px;
+	-o-text-overflow: inherit; /* IE TRAFF */
+	text-overflow 	: inherit; /* IE TRAFF */
+}
+
+div.t_fixed_header tr th, div.t_fixed_header tr td {
+	overflow		: hidden;
+	white-space		: nowrap;	
+	-o-text-overflow: ellipsis;
+	text-overflow 	: ellipsis;
+}
+
+div.t_fixed_header.t_fixed_header_wrap tr th, div.t_fixed_header.t_fixed_header_wrap tr td {
+	white-space		: normal;
+}
+
+div.t_fixed_header div.body {
+	padding			: 0;
+	width			: 100%;
+	overflow-x		: auto;
+}
+
+div.t_fixed_header_main_wrapper {
+	position 		: relative; 
+	overflow 		: hidden; 
+}
+
+div.t_fixed_header_main_wrapper_child {
+	position 		: relative; 
+	width 			: 100% 
+}
+
+/* BASE THEME : UI */
+
+div.t_fixed_header_main_wrapper.ui {
+	border-width 	: 1px 1px 1px 1px;
+	border-style 	: solid;
+	font-weight		: normal;
+	font-size		: 0.8em;
+}
+
+div.t_fixed_header_main_wrapper.ui  div.t_fixed_header_caption {
+	text-align		: left;
+	font-weight		: bold;
+	padding			: 0 5px;
+	height			: 30px;
+	line-height		: 30px;
+	border-width 	: 0 0 1px 0;
+	border-style 	: solid;
+}
+
+div.t_fixed_header_main_wrapper.ui  div.t_fixed_header_caption.toggle {
+	_border-width 	: 0;	
+}
+
+div.t_fixed_header div.headtable {
+	border			: 0;	
+	overflow-x		: hidden;
+    overflow-y		: auto;
+}
+
+div.t_fixed_header.ui .body {
+	border-width 	: 1px 0 0 0;
+	border-style 	: solid;
+	background-image : none;
+}
+
+div.t_fixed_header.ui .headtable th {
+	padding			: 5px;
+	text-align 		: center;
+	border-width 	: 0 1px 0 0;
+	border-style 	: solid;
+}
+
+div.t_fixed_header.ui .headtable .hover {
+	cursor			: pointer;
+	height			: 8px;
+}
+
+div.t_fixed_header.ui .headtable th span.ui-resize {
+	background		: transparent;
+	cursor			: col-resize;
+	display			: inline;
+	float			: right;
+	height			: 10px;
+	margin			: -3px -5px -5px 0;
+	width			: 5px;
+	z-index			: 10000;
+}
+
+div.t_fixed_header.ui div.ui-resize-ghost {
+	display 		: none; 
+	position 		: absolute; 
+	top 			: 0; 
+	width 			: 2px; 
+	border			: none;
+}
+
+div.t_fixed_header.ui .body tr {
+	_border			: 0px;
+}
+
+div.t_fixed_header.ui .body td {
+	padding			: 1px;
+	_text-align 		: left;
+	_line-height		: 15px;
+}
+
+div.t_fixed_header.ui .body tr td {
+	_border-width 	: 0 1px 1px 0;
+	_border-style 	: solid;
+	background		: none;
+}
+
+div.t_fixed_header.ui .body tr:last-child td {
+	border-bottom-width : 0px;
+}
+
+div.t_fixed_header.ui.default .headtable th:last-child, div.t_fixed_header.ui.default .body td:last-child  {
+	border-right-width : 0px;
+}
+
+div.t_fixed_header.ui .body td.last_td, div.t_fixed_header.ui .headtable th.last_td {
+	border-right-width : 0px;
+}
+
+div.t_fixed_header_main_wrapper.ui div.pager {
+	border-width	: 0 0 0 0;
+	padding			: 4px 2px 2px 3px;
+	overflow		: hidden;
+	background-image: none;
+}
+
+div.t_fixed_header_main_wrapper.ui div.pager .button {
+	float			: right;
+	padding			: 4px 0;
+	cursor			: pointer;
+}
+
+div.t_fixed_header_main_wrapper.ui div.pager .button.noborder {
+	border-right-width : 0px;
+}
+
+div.t_fixed_header_main_wrapper.ui div.pager .button span {
+	margin			: 0 4px;
+}
+
+div.t_fixed_header_main_wrapper.ui div.pager div.page_infos {
+	height			: 27px;
+	line-height		: 27px;
+	float			: right;
+	margin-right	: 10px;
+	font-weight		: normal;
+}
+
+
+.CabImg {
+	height: 45px;
+	width: 45px;
+	border: 1px solid #000;
+}
+
+
+
+
+
+.form-control{display:block;width:100%;height:20px;padding:6px 8px;font-size:12px;line-height:1.42857143;color:#555;background-color:#fff;background-image:none;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}.form-control:focus{border-color:#000C2A;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}.form-control::-moz-placeholder{color:#777;opacity:1;font-style:italic}.form-control:-ms-input-placeholder{color:#777;font-style:italic}.form-control::-webkit-input-placeholder{color:#777;font-style:italic}.form-control[disabled],.form-control[readonly],fieldset[disabled] .form-control{cursor:not-allowed;background-color:#eee;opacity:1}textarea.form-control{height:auto}input[type=search]{-webkit-appearance:none}input[type=date],input[type=time],input[type=datetime-local],input[type=month]{line-height:34px;line-height:1.42857143 \0}input[type=date].input-sm,input[type=time].input-sm,input[type=datetime-local].input-sm,input[type=month].input-sm{line-height:30px}input[type=date].input-lg,input[type=time].input-lg,input[type=datetime-local].input-lg,input[type=month].input-lg{line-height:46px}.form-group{margin-bottom:15px}.radio,.checkbox{position:relative;display:block;min-height:20px;margin-top:10px;margin-bottom:10px}.radio label,.checkbox label{padding-left:20px;margin-bottom:0;font-weight:400;cursor:pointer}.radio input[type=radio],.radio-inline input[type=radio],.checkbox input[type=checkbox],.checkbox-inline input[type=checkbox]{position:absolute;margin-top:4px \9;margin-left:-20px}.radio+.radio,.checkbox+.checkbox{margin-top:-5px}.radio-inline,.checkbox-inline{display:inline-block;padding-left:20px;margin-bottom:0;font-weight:400;vertical-align:middle;cursor:pointer}.radio-inline+.radio-inline,.checkbox-inline+.checkbox-inline{margin-top:0;margin-left:10px}input[type=radio][disabled],input[type=checkbox][disabled],input[type=radio].disabled,input[type=checkbox].disabled,fieldset[disabled] input[type=radio],fieldset[disabled] input[type=checkbox]{cursor:not-allowed}.radio-inline.disabled,.checkbox-inline.disabled,fieldset[disabled] .radio-inline,fieldset[disabled] .checkbox-inline{cursor:not-allowed}.radio.disabled label,.checkbox.disabled label,fieldset[disabled] .radio label,fieldset[disabled] .checkbox label{cursor:not-allowed}.form-control-static{padding-top:7px;padding-bottom:7px;margin-bottom:0}.form-control-static.input-lg,.form-control-static.input-sm{padding-right:0;padding-left:0}.input-sm,.form-horizontal .form-group-sm .form-control{height:30px;padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}
